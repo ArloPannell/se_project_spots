@@ -1,0 +1,9 @@
+.gallery {
+  background-color: #fcf5e5;
+  margin-top: 20px;
+}
+
+.gallery__image {
+  height: 413px;
+  width: 413px;
+}
