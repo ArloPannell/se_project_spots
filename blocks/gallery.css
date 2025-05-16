@@ -1,9 +1,18 @@
 .gallery {
   background-color: #fcf5e5;
-  margin-top: 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 413px);
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 40px;
+  padding: 20px 80px 40px;
+  border-bottom: 1px solid #212121;
 }
 
-.gallery__image {
-  height: 413px;
-  width: 413px;
+@media screen and (max-width: 627px) {
+  .gallery {
+    padding: 20px 0;
+    row-gap: 20px;
+  }
 }
