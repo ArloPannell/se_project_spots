@@ -26,6 +26,13 @@
   font-weight: 500;
   line-height: 32px;
   color: #212121;
+  /* text overflow handling */
+  max-width: 420px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .user_info__description {
@@ -34,6 +41,13 @@
   line-height: 16px;
   font-weight: 500;
   color: #21212170;
+  /* text overflow handling */
+  max-width: 420px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .user_info__edit {
