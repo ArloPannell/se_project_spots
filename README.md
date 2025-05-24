@@ -36,8 +36,11 @@ Project is version controlled and deployed deployed to Git Hub -
 
 **Screenshots**
 
+1400 wide Desktop / Laptop view
 ![1440 Desktop](./images/readme/1440_desktop.png)
 
+627px wide Media Query Limit, dynamic page shrinks grid to 2 cards wide, layout changes below this resolution to the mobile view
 ![627px Media Query Limit](./images/readme/627px_MQLimit.png)
 
+320px wide Mobile view, user section has a new layout, only one card per row.
 ![Mobile View](./images/readme/mobile.png)
