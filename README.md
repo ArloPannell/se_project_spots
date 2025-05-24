@@ -20,14 +20,15 @@ The purpose of this project is to practice multiple development skills in a simi
 
 **Methods / Tools**
 
-The design requirements are in Figma, link provided here:  
+- The design requirements are in Figma, link provided here:
+
 (https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
 
-BEM methodology is utilized, with each class having a dedicated CSS file.
+- BEM methodology is utilized, with each class having a dedicated CSS file.
 
-Screenshots of the page are included in this file, images stored in the images folder.
+- Screenshots of the page are included in this file, images stored in the images folder.
 
-Both flexbox and grid layouts are used to achieve the dynamic resposes to screensize.
+- Both flexbox and grid layouts are used to achieve the dynamic resposes to screensize.
 
 **Git Hub**
 
