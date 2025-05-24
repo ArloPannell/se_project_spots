@@ -11,6 +11,7 @@
 }
 
 .card__info {
+  max-width: 413px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,7 +23,7 @@
   margin: 0;
   font-weight: 500;
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 24px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
