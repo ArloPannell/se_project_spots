@@ -1,4 +1,4 @@
-.user_info {
+.user-info {
   max-width: 1280px;
   margin: auto;
   display: flex;
@@ -9,18 +9,18 @@
   border-bottom: 1px solid #212121;
 }
 
-.user_info__avatar {
+.user-info__avatar {
   height: 190px;
   width: 190px;
 }
 
-.user_info__details {
+.user-info__details {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.user_info__username {
+.user-info__username {
   margin: 0;
   font-size: 32px;
   font-weight: 500;
@@ -35,7 +35,7 @@
   -webkit-box-orient: vertical;
 }
 
-.user_info__description {
+.user-info__description {
   margin-top: 12px;
   font-size: 16px;
   line-height: 16px;
@@ -50,7 +50,7 @@
   -webkit-box-orient: vertical;
 }
 
-.user_info__edit {
+.user-info__edit {
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
@@ -65,16 +65,16 @@
   text-align: left;
 }
 
-.user_info__edit_icon {
+.user-info__edit_icon {
   opacity: 70%;
   padding-right: 8px;
 }
 
-.user_info__edit:hover {
+.user-info__edit:hover {
   opacity: 100%;
 }
 
-.user_info__newpost {
+.user-info__newpost {
   background-color: #212121;
   color: #fcf5e5;
   width: 149px;
@@ -86,18 +86,18 @@
   cursor: pointer;
 }
 
-.user_info__plus {
+.user-info__plus {
   height: 12px;
   width: 12px;
   padding-right: 8px;
 }
 
-.user_info__newpost:hover {
+.user-info__newpost:hover {
   opacity: 70%;
 }
 
 @media screen and (max-width: 627px) {
-  .user_info {
+  .user-info {
     padding: 0;
     margin: 0;
     flex-direction: column;
@@ -105,34 +105,34 @@
     text-align: center;
   }
 
-  .user_info__avatar {
+  .user-info__avatar {
     height: 80px;
     width: 80px;
     padding-top: 20px;
   }
 
-  .user_info__details {
+  .user-info__details {
     align-items: center;
     margin: 0;
   }
 
-  .user_info__username {
+  .user-info__username {
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
     padding-top: 12px;
   }
 
-  .user_info__description {
+  .user-info__description {
     margin: 0;
     padding-top: 6px;
   }
 
-  .user_info__edit {
+  .user-info__edit {
     padding: 32px 0 20px;
   }
 
-  .user_info__newpost {
+  .user-info__newpost {
     margin: 0 auto 20px;
     width: 288px;
     padding: 0;
