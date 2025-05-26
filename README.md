@@ -1,13 +1,13 @@
 # Project 3: Spots
 
-### Overview
+## Overview
 
 - Project Description
 - Methods / Tools
 - Git Hub
 - Screenshots
 
-**Project Description**
+### Project Description
 
 The purpose of this project is to practice multiple development skills in a similar fashion to a real-world project. Goals of the project include:
 
@@ -18,7 +18,7 @@ The purpose of this project is to practice multiple development skills in a simi
 - Practice documentation skills, including creation and development of this file.
 - Practice presentation skills by creating a video describng the project.
 
-**Methods / Tools**
+### Methods / Tools
 
 - The design requirements are in Figma, link provided here:
 
@@ -30,13 +30,13 @@ The purpose of this project is to practice multiple development skills in a simi
 
 - Both flexbox and grid layouts are used to achieve the dynamic resposes to screensize.
 
-**Git Hub**
+### Git Hub
 
 Project is version controlled and deployed deployed to Git Hub -
 
 (https://github.com/ArloPannell/se_project_spots)
 
-**Screenshots**
+### Screenshots
 
 1400 wide Desktop / Laptop view
 ![1440 Desktop](./images/readme/1440_desktop.jpg)
