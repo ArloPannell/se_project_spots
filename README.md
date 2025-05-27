@@ -5,6 +5,7 @@
 - Project Description
 - Methods / Tools
 - Git Hub
+- Project Explanation Video
 - Screenshots
 
 ### Project Description
@@ -22,7 +23,7 @@ The purpose of this project is to practice multiple development skills in a simi
 
 - The design requirements are in Figma, link provided here:
 
-(https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1
 
 - BEM methodology is utilized, with each class having a dedicated CSS file.
 
@@ -34,7 +35,13 @@ The purpose of this project is to practice multiple development skills in a simi
 
 Project is version controlled and deployed deployed to Git Hub -
 
-(https://github.com/ArloPannell/se_project_spots)
+https://github.com/ArloPannell/se_project_spots
+
+### Project Explanation Video
+
+A short video showing how the page works and some of the design requirements and considerations
+
+https://drive.google.com/file/d/1EEj22pQ-vKdXp1PUcbOdrqe_TockAf3r/view?usp=sharing
 
 ### Screenshots
 
