@@ -33,7 +33,7 @@ https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spo
 
 ### Git Hub
 
-Project is version controlled and deployed deployed to Git Hub -
+Project is version controlled and deployed to Git Hub -
 
 https://github.com/ArloPannell/se_project_spots
 
