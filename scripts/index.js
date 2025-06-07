@@ -2,7 +2,7 @@
 const modalEditProfile = document.querySelector("#edit-profile-modal");
 const btnEditProfile = document.querySelector(".user-info__edit");
 const btnEditProfileClose = modalEditProfile.querySelector(".modal__close-btn");
-const btnProfileSubmit = modalEditProfile.querySelector(".modal__form");
+const frmProfileSubmit = modalEditProfile.querySelector(".modal__form");
 // Profile Text Controls
 const modalProfileName = document.querySelector("#profile-name-input");
 const txtProfileName = document.querySelector(".user-info__username");
@@ -27,7 +27,7 @@ function handleProfileFormSubmit(evt) {
   modalEditProfile.classList.remove("modal_is-opened");
 }
 
-btnProfileSubmit.addEventListener("submit", handleProfileFormSubmit);
+frmProfileSubmit.addEventListener("submit", handleProfileFormSubmit);
 
 // New Post Modal Controls
 const modalNewPost = document.querySelector("#new-post-modal");
