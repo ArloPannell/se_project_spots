@@ -12,6 +12,7 @@
 .user-info__avatar {
   height: 190px;
   width: 190px;
+  border-radius: 8px;
 }
 
 .user-info__details {
@@ -24,7 +25,7 @@
   margin: 0;
   font-size: 32px;
   font-weight: 500;
-  line-height: 40px;
+  line-height: 32px;
   color: #212121;
   /* text overflow handling */
   max-width: 420px;
@@ -40,7 +41,7 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
-  color: #21212170;
+  color: #212121b3;
   /* text overflow handling */
   max-width: 420px;
   display: -webkit-box;
@@ -51,6 +52,8 @@
 }
 
 .user-info__edit {
+  display: flex;
+  align-items: center;
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
@@ -66,7 +69,6 @@
 }
 
 .user-info__edit-icon {
-  opacity: 70%;
   padding-right: 8px;
 }
 
@@ -79,7 +81,6 @@
   color: #fcf5e5;
   width: 149px;
   height: 52px;
-  padding: 18px, 32px;
   border-radius: 8px;
   margin-left: auto;
   margin-top: auto;
