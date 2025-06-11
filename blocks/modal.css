@@ -84,6 +84,11 @@
   color: #212121;
 }
 
+.modal__input:hover {
+  border: 1px solid #212121;
+  cursor: pointer;
+}
+
 .modal__input::placeholder {
   opacity: 30%;
 }
