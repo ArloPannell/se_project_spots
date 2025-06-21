@@ -1,5 +1,24 @@
 .card {
   margin: 0 auto;
+  position: relative;
+}
+
+.card__delete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  height: 32px;
+  width: 32px;
+  background-image: url(../images/trashCanDefault.svg);
+  background-position: cover;
+}
+
+.card__delete:hover {
+  background-image: url(../images/trashCanHover.svg);
+  cursor: pointer;
 }
 
 .card__image {
@@ -15,7 +34,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  column-gap: 20px;
   padding-top: 12px;
 }
 
@@ -29,7 +47,7 @@
   overflow: hidden;
 }
 
-.card__like {
+.card__like-default {
   padding: 0;
   opacity: 40%;
   border: 0;
@@ -37,15 +55,34 @@
   cursor: pointer;
   width: 23px;
   height: 20px;
+  background-image: url(../images/like-icon.svg);
+  padding-left: 23px;
+  background-position: cover;
 }
 
-.card__like-icon {
-  width: 23px;
-  height: 20px;
-}
-
-.card__like:hover {
+.card__like-default:hover {
   opacity: 100%;
+}
+
+.card__like-liked {
+  /* The figma does not have a heart image with a 
+transparent background other than the one with lower opacity,
+so I coded this to make the heart fuction in the absence of a
+proper image file */
+  height: 20px;
+  aspect-ratio: 1;
+  clip-path: shape(
+    from 50% 91%,
+    line to 90% 50%,
+    arc to 50% 9% of 1%,
+    arc to 10% 50% of 1%
+  );
+  background: #ff6565;
+  opacity: 100%;
+}
+
+.card__like-liked:hover {
+  opacity: 40%;
 }
 
 @media screen and (max-width: 627px) {

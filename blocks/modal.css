@@ -38,13 +38,13 @@
   font-weight: 500;
 }
 
-.modal__close-btn {
+.modal__close-btn_type_form {
   position: absolute;
   top: 32px;
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url(../images/imgFormClose.svg);
+  background-image: url(../images/imgFormCloseBlack.svg);
   opacity: 40%;
   background-size: cover;
   border: 0;
@@ -55,6 +55,23 @@
 .modal__close-btn:hover {
   opacity: 100;
   cursor: pointer;
+}
+
+.modal__close-btn_type_preview {
+  position: absolute;
+  top: 0;
+  right: -52.5px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/imgFormCloseWhite.svg);
+  background-size: cover;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.modal__close-btn_type_preview:hover {
+  opacity: 40%;
 }
 
 .modal__form {
@@ -111,6 +128,37 @@
   cursor: pointer;
 }
 
+.modal__container_preview {
+  position: relative;
+  padding: 8px 8px;
+  background: transparent;
+  padding: 0;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.modal__caption {
+  color: #fff;
+  background-color: #212121;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 0;
+  max-width: 80vw;
+  width: max-content;
+  padding: 4px 8px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
 @media screen and (max-width: 627px) {
   .modal__container {
     padding: 12px 12px;
@@ -153,5 +201,14 @@
     max-width: 276px;
     width: 100%;
     margin: 0;
+  }
+
+  .modal__image {
+    max-width: 288px;
+  }
+
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
   }
 }

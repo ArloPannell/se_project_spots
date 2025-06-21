@@ -48,117 +48,17 @@
           </button>
         </section>
         <section class="gallery">
-          <!-- First Photo -->
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Gallery Photo"
-            />
-            <div class="card__info">
-              <p class="card__text">Val Thorens</p>
-              <button class="card__like" type="button">
-                <img
-                  class="card__like-icon"
-                  src="./images/like-icon.svg"
-                  alt="Like"
-                />
-              </button>
+          <!-- Gallery Photo Template -->
+          <template id="card-template">
+            <div class="card">
+              <button class="card__delete" type="button"></button>
+              <img class="card__image" src="#" alt="#" />
+              <div class="card__info">
+                <p class="card__text"></p>
+                <button class="card__like-default" type="button"></button>
+              </div>
             </div>
-          </div>
-          <!-- Second Photo -->
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="Gallery Photo"
-            />
-            <div class="card__info">
-              <p class="card__text">Restaurant terrace</p>
-              <button class="card__like" type="button">
-                <img
-                  class="card__like-icon"
-                  src="./images/like-icon.svg"
-                  alt="Like"
-                />
-              </button>
-            </div>
-          </div>
-          <!-- Third Photo -->
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="Gallery Photo"
-            />
-            <div class="card__info">
-              <p class="card__text">An outdoor cafe</p>
-              <button class="card__like" type="button">
-                <img
-                  class="card__like-icon"
-                  src="./images/like-icon.svg"
-                  alt="Like"
-                />
-              </button>
-            </div>
-          </div>
-          <!-- Fourth Photo  -->
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="Gallery Photo"
-            />
-            <div class="card__info">
-              <p class="card__text">
-                A very long bridge, over the forrest high in the sky and really
-                long
-              </p>
-              <button class="card__like" type="button">
-                <img
-                  class="card__like-icon"
-                  src="./images/like-icon.svg"
-                  alt="Like"
-                />
-              </button>
-            </div>
-          </div>
-          <!-- Fifth Photo -->
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="Gallery Photo"
-            />
-            <div class="card__info">
-              <p class="card__text">Tunnel with morning light</p>
-              <button class="card__like" type="button">
-                <img
-                  class="card__like-icon"
-                  src="./images/like-icon.svg"
-                  alt="Like"
-                />
-              </button>
-            </div>
-          </div>
-          <!-- Sixth Photo -->
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Gallery Photo"
-            />
-            <div class="card__info">
-              <p class="card__text">Mountain house</p>
-              <button class="card__like" type="button">
-                <img
-                  class="card__like-icon"
-                  src="./images/like-icon.svg"
-                  alt="Like"
-                />
-              </button>
-            </div>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">2025 &copy; Spots</footer>
@@ -166,7 +66,7 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button
-            class="modal__close-btn"
+            class="modal__close-btn_type_form"
             type="button"
             aria-label="Close Button"
           ></button>
@@ -200,7 +100,7 @@
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button
-            class="modal__close-btn"
+            class="modal__close-btn_type_form"
             type="button"
             aria-label="Close Button"
           ></button>
@@ -228,6 +128,18 @@
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+      </div>
+      <!-- Image Preview -->
+      <div class="modal" id="preview-modal">
+        <div class="modal__container_preview">
+          <button
+            class="modal__close-btn_type_preview"
+            type="button"
+            aria-label="Close Button"
+          ></button>
+          <img class="modal__image" src="#" alt="#" />
+          <p class="modal__caption"></p>
         </div>
       </div>
     </div>
