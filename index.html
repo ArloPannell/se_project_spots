@@ -71,7 +71,7 @@
             aria-label="Close Button"
           ></button>
           <h2 class="modal__title">Edit Profile</h2>
-          <form class="modal__form" name="profile-form">
+          <form class="modal__form" id="profile-form" novalidate>
             <label for="profile-name-input" class="modal__label"
               >Name
               <input
@@ -80,7 +80,10 @@
                 class="modal__input"
                 required
                 placeholder="Type your name"
+                minlength="2"
+                maxlength="40"
               />
+              <span class="modal__error-text" id="profile-name-input-error"></span>
             </label>
             <label for="profile-description-input" class="modal__label"
               >Description
@@ -90,7 +93,10 @@
                 class="modal__input"
                 required
                 placeholder="Describe youself"
+                minlength="2"
+                maxlength="200"
               />
+              <span class="modal__error-text" id="profile-description-input-error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -105,16 +111,17 @@
             aria-label="Close Button"
           ></button>
           <h2 class="modal__title">New Post</h2>
-          <form class="modal__form" name="newpost-form">
+          <form class="modal__form" id="newpost-form" novalidate>
             <label for="new-post_link-input" class="modal__label"
               >Image Link
               <input
                 id="new-post_link-input"
-                type="text"
+                type="url"
                 class="modal__input"
                 required
                 placeholder="Paste a link to the picture"
               />
+              <span class="modal__error-text" id="new-post_link-input-error"></span>
             </label>
             <label for="new-post_caption-input" class="modal__label"
               >Caption
@@ -124,8 +131,11 @@
                 class="modal__input"
                 required
                 placeholder="Type your caption"
+                minlength="2"
+                maxlength="30"
               />
             </label>
+            <span class="modal__error-text" id="new-post_caption-input-error"></span>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
@@ -144,5 +154,6 @@
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>

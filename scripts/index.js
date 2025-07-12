@@ -33,6 +33,7 @@ const initialCards = [
 const modalEditProfile = document.querySelector("#edit-profile-modal");
 const btnEditProfile = document.querySelector(".user-info__edit");
 const frmProfileSubmit = modalEditProfile.querySelector(".modal__form");
+const btnProfileSubmit = modalEditProfile.querySelector(".modal__submit-btn");
 // Profile Field Selectors
 const modalProfileName = document.querySelector("#profile-name-input");
 const txtProfileName = document.querySelector(".user-info__username");
@@ -42,6 +43,7 @@ const txtUserDescription = document.querySelector(".user-info__description");
 const modalNewPost = document.querySelector("#new-post-modal");
 const btnNewPost = document.querySelector(".user-info__newpost");
 const frmNewPost = modalNewPost.querySelector(".modal__form");
+const btnNewPostSubmit = modalNewPost.querySelector(".modal__submit-btn");
 // New Post Form Field Selectors
 const modalPicLink = modalNewPost.querySelector("#new-post_link-input");
 const modalCaption = modalNewPost.querySelector("#new-post_caption-input");
@@ -104,6 +106,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   txtProfileName.textContent = modalProfileName.value;
   txtUserDescription.textContent = modalProfileDesc.value;
+  disableSubmitButton(btnProfileSubmit);
   closeModal(modalEditProfile);
 }
 
@@ -112,14 +115,16 @@ function handleNewPostSubmit(evt) {
   cardObject = { name: modalCaption.value, link: modalPicLink.value };
   galleryContainer.prepend(getCardElement(cardObject));
   evt.target.reset();
+  disableSubmitButton(btnNewPostSubmit);
   closeModal(modalNewPost);
 }
 // Evemt Listeners
 // Profile
 btnEditProfile.addEventListener("click", function () {
-  openModal(modalEditProfile);
+  resetValidation(frmProfileSubmit, [modalProfileName, modalProfileDesc]);
   modalProfileName.value = txtProfileName.textContent;
   modalProfileDesc.value = txtUserDescription.textContent;
+  openModal(modalEditProfile);
 });
 
 frmProfileSubmit.addEventListener("submit", handleProfileFormSubmit);
