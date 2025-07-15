@@ -29,6 +29,8 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
+// Modal Selector
+const modalBackround = document.querySelector(".modal");
 // Profile Modal Selectors
 const modalEditProfile = document.querySelector("#edit-profile-modal");
 const btnEditProfile = document.querySelector(".user-info__edit");
@@ -58,10 +60,27 @@ const galleryTemplate = document
   .content.querySelector(".card");
 // Modal Close Button Selector
 const setCloseButtons = document.querySelectorAll(".modal__close-btn");
+
 // Functions
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-}
+// Click to Exit
+modal.addEventListener("click", function (evt) {
+evt.target.classList.forEach(classItem => {
+if (classItem === "modal") {
+closeModal(modal);
+      };
+  }); 
+});
+// Escape Key Exit
+function escapePressed(evt) {
+  if (evt.key === "Escape") {
+document.removeEventListener("keydown", escapePressed, true);
+closeModal(modal);
+  };
+};
+document.addEventListener("keydown", escapePressed, true);
+}; 
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
@@ -106,7 +125,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   txtProfileName.textContent = modalProfileName.value;
   txtUserDescription.textContent = modalProfileDesc.value;
-  disableSubmitButton(btnProfileSubmit);
+  disableSubmitButton(btnProfileSubmit, objConfig);
   closeModal(modalEditProfile);
 }
 
@@ -115,13 +134,13 @@ function handleNewPostSubmit(evt) {
   cardObject = { name: modalCaption.value, link: modalPicLink.value };
   galleryContainer.prepend(getCardElement(cardObject));
   evt.target.reset();
-  disableSubmitButton(btnNewPostSubmit);
+  disableSubmitButton(btnNewPostSubmit, objConfig);
   closeModal(modalNewPost);
 }
 // Evemt Listeners
 // Profile
 btnEditProfile.addEventListener("click", function () {
-  resetValidation(frmProfileSubmit, [modalProfileName, modalProfileDesc]);
+  resetValidation(frmProfileSubmit, [modalProfileName, modalProfileDesc], objConfig);
   modalProfileName.value = txtProfileName.textContent;
   modalProfileDesc.value = txtUserDescription.textContent;
   openModal(modalEditProfile);
@@ -131,6 +150,7 @@ frmProfileSubmit.addEventListener("submit", handleProfileFormSubmit);
 
 // New Post
 btnNewPost.addEventListener("click", function () {
+  resetValidation(frmNewPost, [modalPicLink, modalCaption], objConfig);
   openModal(modalNewPost);
 });
 frmNewPost.addEventListener("submit", handleNewPostSubmit);
@@ -140,3 +160,4 @@ setCloseButtons.forEach((button) => {
   const popUp = button.closest(".modal");
   button.addEventListener("click", () => closeModal(popUp));
 });
+
