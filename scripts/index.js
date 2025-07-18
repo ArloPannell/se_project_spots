@@ -62,27 +62,32 @@ const galleryTemplate = document
 const setCloseButtons = document.querySelectorAll(".modal__close-btn");
 
 // Functions
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
-// Click to Exit
-modal.addEventListener("click", function (evt) {
-evt.target.classList.forEach(classItem => {
-if (classItem === "modal") {
-closeModal(modal);
-      };
-  }); 
-});
 // Escape Key Exit
 function escapePressed(evt) {
   if (evt.key === "Escape") {
-document.removeEventListener("keydown", escapePressed, true);
-closeModal(modal);
-  };
-};
-document.addEventListener("keydown", escapePressed, true);
-}; 
+    document.removeEventListener("keydown", escapePressed, true);
+    const modal = document.querySelector(".modal_is-opened");
+    closeModal(modal);
+  }
+}
+
+// Click to Exit
+function exitClick(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+
+  modal.addEventListener("click", exitClick, true);
+  document.addEventListener("keydown", escapePressed, true);
+}
 
 function closeModal(modal) {
+  document.removeEventListener("keydown", escapePressed, true);
+  modal.removeEventListener("click", exitClick, true);
   modal.classList.remove("modal_is-opened");
 }
 
@@ -131,7 +136,7 @@ function handleProfileFormSubmit(evt) {
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  cardObject = { name: modalCaption.value, link: modalPicLink.value };
+  const cardObject = { name: modalCaption.value, link: modalPicLink.value };
   galleryContainer.prepend(getCardElement(cardObject));
   evt.target.reset();
   disableSubmitButton(btnNewPostSubmit, objConfig);
@@ -140,19 +145,29 @@ function handleNewPostSubmit(evt) {
 // Evemt Listeners
 // Profile
 btnEditProfile.addEventListener("click", function () {
-  resetValidation(frmProfileSubmit, [modalProfileName, modalProfileDesc], objConfig);
   modalProfileName.value = txtProfileName.textContent;
   modalProfileDesc.value = txtUserDescription.textContent;
   openModal(modalEditProfile);
+  resetValidation(
+    frmProfileSubmit,
+    [modalProfileName, modalProfileDesc],
+    objConfig
+  );
+  toggleButtonState(
+    [modalProfileName, modalProfileDesc],
+    btnProfileSubmit,
+    objConfig
+  );
 });
 
 frmProfileSubmit.addEventListener("submit", handleProfileFormSubmit);
 
 // New Post
 btnNewPost.addEventListener("click", function () {
-  resetValidation(frmNewPost, [modalPicLink, modalCaption], objConfig);
+  enableValidation(objConfig);
   openModal(modalNewPost);
 });
+
 frmNewPost.addEventListener("submit", handleNewPostSubmit);
 
 // Close
@@ -160,4 +175,3 @@ setCloseButtons.forEach((button) => {
   const popUp = button.closest(".modal");
   button.addEventListener("click", () => closeModal(popUp));
 });
-
