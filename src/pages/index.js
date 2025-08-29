@@ -1,3 +1,12 @@
+import "./index.css";
+import {
+  enableValidation,
+  objConfig,
+  resetValidation,
+  toggleButtonState,
+  disableSubmitButton,
+} from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -175,3 +184,5 @@ setCloseButtons.forEach((button) => {
   const popUp = button.closest(".modal");
   button.addEventListener("click", () => closeModal(popUp));
 });
+
+enableValidation(objConfig);
