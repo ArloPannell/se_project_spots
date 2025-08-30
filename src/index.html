@@ -21,15 +21,28 @@
       </header>
       <main class="content">
         <section class="user-info">
-          <img
-            class="user-info__avatar"
-            src="./images/avatar.jpg"
-            alt="UserAvatar"
-          />
+          <div class="user-info__avatar-container">
+            <button
+              class="user-info__avatar-btn"
+              type="button"
+              aria-label="Change Avatar Button"
+            >
+              <img
+                class="user-info__pencil-icon"
+                src="./images/pencil-icon-light.svg"
+                alt="edit-icon"
+              />
+            </button>
+            <img class="user-info__avatar" alt="UserAvatar" />
+          </div>
           <div class="user-info__details">
-            <h1 class="user-info__username">Bessie Coleman</h1>
-            <p class="user-info__description">Civil Aviator</p>
-            <button type="button" class="user-info__edit">
+            <h1 class="user-info__username"></h1>
+            <p class="user-info__description"></p>
+            <button
+              type="button"
+              class="user-info__edit"
+              aria-label="Edit Button"
+            >
               <img
                 class="user-info__edit-icon"
                 src="./images/edit-icon.svg"
@@ -37,7 +50,11 @@
               />Edit Profile
             </button>
           </div>
-          <button class="user-info__newpost" type="button">
+          <button
+            class="user-info__newpost"
+            type="button"
+            aria-label="New Post Button"
+          >
             <img
               class="user-info__plus"
               src="./images/plus-icon.svg"
@@ -49,11 +66,19 @@
           <!-- Gallery Photo Template -->
           <template id="card-template">
             <div class="card">
-              <button class="card__delete" type="button"></button>
+              <button
+                class="card__delete"
+                type="button"
+                aria-label="Delete Button"
+              ></button>
               <img class="card__image" src="#" alt="#" />
               <div class="card__info">
                 <p class="card__text"></p>
-                <button class="card__like-default" type="button"></button>
+                <button
+                  class="card__like-default"
+                  type="button"
+                  aria-label="Like Button"
+                ></button>
               </div>
             </div>
           </template>
@@ -102,7 +127,13 @@
                 id="profile-description-input-error"
               ></span>
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-btn"
+              aria-label="Save Button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -146,7 +177,47 @@
               class="modal__error-text"
               id="new-post_caption-input-error"
             ></span>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-btn"
+              aria-label="Save Button"
+            >
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Edit Avatar Popup -->
+      <div class="modal" id="edit-avatar-modal">
+        <div class="modal__container">
+          <button
+            class="modal__close-btn"
+            type="button"
+            aria-label="Close Button"
+          ></button>
+          <h2 class="modal__title">Edit profile avatar</h2>
+          <form class="modal__form" id="edit-avatar-form" novalidate>
+            <label for="avatar_link-input" class="modal__label"
+              >Profile Picture
+              <input
+                id="avatar_link-input"
+                type="url"
+                class="modal__input"
+                required
+                placeholder="Paste a link to an image"
+              />
+              <span
+                class="modal__error-text"
+                id="avatar_link-input-error"
+              ></span>
+            </label>
+            <button
+              type="submit"
+              class="modal__submit-btn"
+              aria-label="Save Button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -154,13 +225,46 @@
       <div class="modal" id="preview-modal">
         <div class="modal__preview">
           <button
-            class="modal__close-btn modal__close-btn_type_preview"
+            class="modal__close-btn modal__close-btn_type_outside"
             type="button"
             aria-label="Close Button"
           ></button>
           <img class="modal__image" src="#" alt="#" />
           <p class="modal__caption"></p>
         </div>
+      </div>
+      <!--Delete Warning-->
+      <div class="modal" id="delete-warning-modal">
+        <!-- <div class="modal__container"> -->
+        <div class="modal__del-warn">
+          <button
+            class="modal__close-btn modal__close-btn_type_outside"
+            type="button"
+            aria-label="Close Button"
+          ></button>
+          <p class="modal__del-warn_title">
+            Are you sure you want to delete this image?
+          </p>
+          <div class="modal__del-warn-btnContainer">
+            <button
+              class="modal__del-warn_button"
+              type="button"
+              aria-label="Delete Button"
+              id="btnDelete"
+            >
+              Delete
+            </button>
+            <button
+              class="modal__del-warn_button"
+              type="button"
+              aria-label="Cancel Button"
+              id="btnDelCancel"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+        <!-- </div> -->
       </div>
     </div>
   </body>
