@@ -31,7 +31,7 @@
 }
 
 .modal__title {
-  margin: 0 0 32px;
+  margin: 0;
   color: #212121;
   font-size: 32px;
   line-height: 32px;
@@ -57,7 +57,7 @@
   cursor: pointer;
 }
 
-.modal__close-btn_type_preview {
+.modal__close-btn_type_outside {
   position: absolute;
   top: 0;
   right: -52.5px;
@@ -68,9 +68,10 @@
   border: 0;
   background-color: transparent;
   padding: 0;
+  opacity: 100%;
 }
 
-.modal__close-btn_type_preview:hover {
+.modal__close-btn_type_outside:hover {
   opacity: 40%;
 }
 
@@ -112,17 +113,17 @@
 }
 
 .modal__error-text {
-color: #ff0000b3;
-margin: 8px 0 0;
-display: block;
+  color: #ff0000b3;
+  margin: 8px 0 0;
+  display: block;
 }
 
 .modal__input_type_error {
-border-color: #ff000099;
+  border-color: #ff000099;
 }
 
 .modal__input_type_error:hover {
-border-color: #ff000099;
+  border-color: #ff000099;
 }
 
 .modal__submit-btn {
@@ -147,7 +148,7 @@ border-color: #ff000099;
   opacity: 50%;
 }
 
-.modal__submit-btn_disabled:hover{
+.modal__submit-btn_disabled:hover {
   opacity: 50%;
 }
 
@@ -181,6 +182,54 @@ border-color: #ff000099;
   padding: 4px 8px;
   font-size: 20px;
   line-height: 24px;
+}
+
+.modal__del-warn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 32px 20px;
+  position: relative;
+  max-width: 630px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.modal__del-warn_title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+}
+
+.modal__del-warn-btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.modal__del-warn_button {
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  background-color: #fff;
+}
+
+#btnDelete {
+  background-color: #ff6565;
 }
 
 @media screen and (max-width: 627px) {
@@ -231,8 +280,25 @@ border-color: #ff000099;
     max-width: 288px;
   }
 
-  .modal__close-btn_type_preview {
+  .modal__close-btn_type_outside {
     top: -48px;
     right: 0;
+  }
+
+  .modal__del-warn_title {
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .modal__del-warn {
+    row-gap: 20px;
+    padding: 12px 12px;
+  }
+
+  .modal__del-warn-btnContainer {
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 12px;
   }
 }
