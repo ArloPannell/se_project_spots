@@ -125,10 +125,10 @@ function handleDeleteSubmit(evt) {
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
+      closeModal(modalDeletePost);
     })
     .catch(console.error)
     .finally(() => {
-      closeModal(modalDeletePost);
       submitButton.textContent = "Delete";
     });
 }
@@ -186,11 +186,12 @@ function handleAvatarSubmit(evt) {
       };
       refreshProfile(profile);
       evt.target.reset();
+      disableSubmitButton(submitButton, objConfig);
+      closeModal(modalEditAvatar);
     })
     .catch(console.error)
     .finally(() => {
       submitButton.textContent = "Save";
-      closeModal(modalEditAvatar);
     });
 }
 
@@ -209,12 +210,12 @@ function handleProfileFormSubmit(evt) {
         about: modalProfileDesc.value,
         avatar: res.avatar,
       });
+      disableSubmitButton(btnProfileSubmit, objConfig);
+      closeModal(modalEditProfile);
     })
     .catch(console.error)
     .finally(() => {
       submitButton.textContent = "Save";
-      disableSubmitButton(btnProfileSubmit, objConfig);
-      closeModal(modalEditProfile);
     });
 }
 
@@ -227,14 +228,13 @@ function handleNewPostSubmit(evt) {
     .addNewCard(cardObject)
     .then((card) => {
       galleryContainer.prepend(getCardElement(card));
+      evt.target.reset();
+      disableSubmitButton(btnNewPostSubmit, objConfig);
+      closeModal(modalNewPost);
     })
     .catch(console.error)
     .finally(() => {
       submitButton.textContent = "Save";
-      evt.target.reset();
-      disableSubmitButton(btnNewPostSubmit, objConfig);
-      closeModal(modalNewPost);
-      this.reset();
     });
 }
 // Evemt Listeners

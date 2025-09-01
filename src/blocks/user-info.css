@@ -40,6 +40,7 @@
 .user-info__avatar-container:hover .user-info__avatar-btn {
   visibility: visible;
   z-index: 1;
+  cursor: pointer;
 }
 
 .user-info__avatar-btn::after {
